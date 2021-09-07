@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 import '../model/http_exception.dart';
 import '../provider/product.dart';
 
-
 import 'package:http/http.dart' as http;
-
-
-
 
 class Products with ChangeNotifier {
   List<Product> _items = [
@@ -58,7 +54,6 @@ class Products with ChangeNotifier {
   }
 
   List<Product> get items {
-
     return [..._items];
   }
 
@@ -69,8 +64,6 @@ class Products with ChangeNotifier {
   Product findById(String id) {
     return _items.firstWhere((prod) => prod.id == id);
   }
-
-
 
   Future<void> fetchAndSetProducts([bool filterByUser = false]) async {
     final filterString =
